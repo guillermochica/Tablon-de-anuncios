@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+    <title>Tablón de anuncios</title>
+  </head>
+
+  <body align="center">
+    <h1> Tablón de anuncios </h1>
+    <p>Crea anuncios para darte a conocer como profesional o para dar a conocer algo que quieras vender.  </p>
+    <p>Elige una categoría donde publicar tu anuncio, pon tu nombre y tu anuncio y postéalo.  </p>
+    <p>Selecciona categoría</p>
+    <select name="categoria">
+      <option value="trabajo" id="trabajo">Trabajo</option>
+      <option value="vender" id="vender">Ventas</option>
+      <option value="transporte" id="transporte">Transporte</option>
+    </select>
+
+    <form id="formulario">
+      Nombre:<br>
+      <input type="text" id="nombre">
+      <br>
+      Anuncio:<br>
+      <input type="text" id="anuncio">
+      <br>
+    </form>
+
+    <input type="submit" value="Publicar anuncio" id="publicar">
+    <p id='result'></p>
+    <a href="/trabajo"> Ir al tablón de Trabajo. </a>
+    <a href="/vender"> Ir al tablón de ventas. </a>
+    <a href="/transporte"> Ir al tablón de transporte. </a>
+    <script type='text/javascript'>
+
+    $(document).ready(function () {
+      //Cuando haga click en publicar se enviará una petición post siempre que el formulario esté relleno
+      $('#publicar').click(function() {
+        $.post('/post/' + $("select").val() + '/' + $("#nombre").val() + '/' + $("#anuncio").val() + '/', function(data) {
+          $('#result').html(data);
+        });
+      });
+
+    });
+
+    </script>
+
+  </body>
+
+</html>
