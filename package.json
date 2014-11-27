@@ -1,0 +1,25 @@
+{
+  "name": "Tablon-de-anuncios",
+  "version": "1.0.0",
+  "description": "Aplicacion cliente-servidor en JS",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.10.2",
+    "restler": "^3.2.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/guillermochica/Tablon-de-anuncios.git"
+  },
+  "author": "Guillermo Chica Sabariego",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/guillermochica/Tablon-de-anuncios/issues"
+  },
+  "homepage": "https://github.com/guillermochica/Tablon-de-anuncios"
+}
