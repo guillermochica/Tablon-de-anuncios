@@ -6,8 +6,7 @@ También tiene un cliente en node*/
 
 var express = require('express'); //Cargo el modulo express, que me permite crear un servidor (necesario instalar express)
 var app = express(); //Creo una instancia de express en una variable que me servirá para controlar el servidor
-var port = process.argv[2]?process.argv[2]:'8080'; //Puerto por defecto
-
+app.set('port', (process.env.PORT || 5000))
 var fs = require('fs'); //Cargo el módulo para trabajar con ficheros (módulo incluido por defecto en node)
 var inicio = fs.readFileSync('inicio.html', 'utf8'); //Cargo el documento html de la página de inicio en una variable para usarla después
 
@@ -115,4 +114,4 @@ app.post('/post/:categoria/:nombre/:anuncio/', function (req, res) {
 
 
 app.listen(port);
-console.log('Server running at http://127.0.0.1:'+port);
+console.log('Server running at http://127.0.0.1:'+ app.get('port'));
