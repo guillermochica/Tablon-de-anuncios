@@ -17,7 +17,7 @@ var transporte = new Array; //vector donde guardar los anuncios de transportes
 var vender = new Array; //vector donde guardar los anuncios de ventas
 
 //String que contiene parte del código HTML común a todas las páginas que servirá el servidor
-var string = '<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"<title>Tablón de anuncios</title></head><body align="center">';
+var string = '<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"</head><body align="center">';
 
 app.get('/', function (req, res) {
   console.log('Request received');
@@ -65,6 +65,33 @@ app.get('/vender/', function (req, res) {
   fs.writeFileSync('vender.html', data); //Creo un documento html y lo relleno con el string para cargarlo en el navegador
   var venderHTML = fs.readFileSync('vender.html', 'utf8');
   res.send(venderHTML); //Envio el documento html
+});
+
+app.get('/node/trabajo/', function (req, res) {
+  console.log('Request received');
+  var data = '';
+  for (i = (trabajo.length-1) ; i> 0 ; i=i-2) { //Voy rellenando ese string con los anuncios que hay para mostrar
+    data = data + trabajo[i-1]+ ': ' + trabajo[i] + '\n\n';
+  }
+  res.send(data);
+});
+
+app.get('/node/transporte/', function (req, res) {
+  console.log('Request received');
+  var data = '';
+  for (i = (transporte.length-1) ; i> 0 ; i=i-2) { //Voy rellenando ese string con los anuncios que hay para mostrar
+    data = data + transporte[i-1]+ ': ' + transporte[i] + '\n\n';
+  }
+  res.send(data);
+});
+
+app.get('/node/vender/', function (req, res) {
+  console.log('Request received');
+  var data = '';
+  for (i = (vender.length-1) ; i> 0 ; i=i-2) { //Voy rellenando ese string con los anuncios que hay para mostrar
+    data = data + vender[i-1]+ ': ' + vender[i] + '\n\n';
+  }
+  res.send(data);
 });
 
 app.post('/post/:categoria/:nombre/:anuncio/', function (req, res) {
