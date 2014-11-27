@@ -15,3 +15,5 @@ Para ejecutar el cliente en node.js se necesita tener instalado node.js y el mó
 -Para publicar un anuncio escribe `node clienteNode post categoria Nombre El texto del anuncio`, donde el nombre debe ser una sola palabra. Ejemplo: `node clienteNode post trabajo Guillermo Soy minero de pico y barrena`.
 
 -Para ver los anuncios de una categoría escribe `node clienteNode get categoria`. Ejemplo: `node clienteNode get trabajo`.
+
+La aplicación se puede probar aquí: http://tablondeanuncios.herokuapp.com/
