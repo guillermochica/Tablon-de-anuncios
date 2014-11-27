@@ -67,6 +67,7 @@ app.get('/vender/', function (req, res) {
   res.send(venderHTML); //Envio el documento html
 });
 
+//Cuando se hace una petición get desde el cliente en node.js, se les enruta a estas direcciones de aquí porque para node no hay que generar un html.
 app.get('/node/trabajo/', function (req, res) {
   console.log('Request received');
   var data = '';
