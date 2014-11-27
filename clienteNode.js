@@ -7,7 +7,7 @@ En el cliente en node, el nombre debe constar solo de una palabra
 Para ver los anuncios publicados escribe node clienteNode get categoria */
 
 var rest = require('restler'); //Cargo el módulo require que me permitirá hacer peticiones http (get, post...)
-var url = 'http://127.0.0.1:8080/'; //CAMBIAR SI CAMBIAMOS DE URL
+var url = 'http://tablondeanuncios.herokuapp.com/'; 
 var accion = process.argv[2]?process.argv[2]:''; //La tercera palabra introducida por la terminal será la acción (Post o Get)
 var categoria =  process.argv[3]?process.argv[3]:''; // La cuarta palabra introducida por la terminal será la categoría (trabajo, vender o transporte)
 var nombre = process.argv[4]?process.argv[4]:''; //La quinta palabra introducida por la terminal será el nombre del anunciante (una sola palabra)
